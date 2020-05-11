@@ -1,9 +1,12 @@
 import React from 'react';
-import LoginPage from './pages/login-page/login-page.page';
+import ShellPage from './pages/shell-page/shell.page';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-  <LoginPage></LoginPage>
+    <BrowserRouter>
+      <ShellPage></ShellPage>
+    </BrowserRouter>
   );
 }
 
