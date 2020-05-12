@@ -8,7 +8,7 @@ const links = props.links.map((link, i) => <SidebarLink name={link} key={i}></Si
     return(
         <div className={classes['sidebar-wrapper']}>
             <div className={classes.logo}>
-                <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo"/>
+                <img src={process.env.PUBLIC_URL + '/user.svg'} alt="logo"/>
             </div>
             <div className={classes['links-wrapper']}>
                 {links}
