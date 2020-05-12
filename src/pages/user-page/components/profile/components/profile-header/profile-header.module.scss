@@ -11,3 +11,55 @@
     background-image: url('/user.svg');
     background-position: center;
 }
+
+.follow-buttons-wrapper {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    .follow-buttons {
+        display: flex;
+        align-items: center;
+        flex-grow: 10;
+    }
+
+    button {
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 5px 10px 5px 5px;
+        color: inherit;
+        background-color: #eeeeee;
+        border: 1px solid #000000;
+        border-right: none;
+        display: flex;
+        align-items: center;
+    }
+
+    button:last-child {
+        border-right: 1px solid #000000;
+    }
+
+    .icon {
+        width:15px;
+        height: 15px;
+        padding: 5px 5px 5px 10px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .send-message-button {
+        background-color:#0078ff;
+        color: #ffffff;
+        padding: 10px;
+        flex-grow: 2;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+    }
+}
