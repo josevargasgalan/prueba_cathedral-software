@@ -9,7 +9,7 @@ function AddPublicationComponent() {
         {text: 'Sentimiento/s', icon: 'emoji'},
     ];
 
-    const chips = publicationOptions.map(option => <ChipComponent text={option.text} icon={option.icon}></ChipComponent>)
+    const chips = publicationOptions.map((option, i) => <ChipComponent text={option.text} icon={option.icon} key={i}></ChipComponent>)
 
     return(
         <div className={classes['add-publication-wrapper']}>

@@ -10,6 +10,7 @@ function HeaderComponent(props) {
     <div className={classes.links}>
         <span>{props.name}</span>
         <span>Notificaciones</span>
+        <span className={classes.notifications}>4</span>
     </div>
 </div>
    )

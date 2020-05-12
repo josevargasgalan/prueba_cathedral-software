@@ -11,7 +11,7 @@ function CreateMenuComponent() {
         {text: 'Empleo', icon: 'suitcase'},
     ];
 
-    const chips = publicationOptions.map(option => <ChipComponent text={option.text} icon={option.icon}></ChipComponent>)
+    const chips = publicationOptions.map((option, i) => <ChipComponent text={option.text} icon={option.icon} key={i}></ChipComponent>)
 
     return (
         <div className={classes['create-menu-wrapper']}>
