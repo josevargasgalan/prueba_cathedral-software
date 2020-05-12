@@ -10,9 +10,11 @@ const links = props.links.map((link, i) => <SidebarLink name={link} key={i}></Si
             <div className={classes.logo}>
                 <img src={process.env.PUBLIC_URL + '/user.svg'} alt="logo"/>
             </div>
+            <h3 style={{marginBottom:'10px'}}>Perfil de Jose</h3>
             <div className={classes['links-wrapper']}>
                 {links}
             </div>
+            <button className={classes['promotion-button']}>Promocionar</button>
         </div>
     )
 }

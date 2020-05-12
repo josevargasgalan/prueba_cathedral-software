@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .logo {
@@ -22,4 +23,11 @@
         max-width: 100%;
         max-height: 100%;
     }
+}
+
+.promotion-button {
+    color: white;
+    background-color:#0078ff;
+    padding: 5px;
+    font-size: 14px;
 }

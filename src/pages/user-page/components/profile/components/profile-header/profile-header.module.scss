@@ -1,0 +1,13 @@
+.profile-header-wrapper {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.logo {
+    width: 100%;
+    height: 30vh;
+    background-image: url('/user.svg');
+    background-position: center;
+}
