@@ -1,13 +1,13 @@
 import React from 'react';
-import './header.component.scss';
+import classes from './header.module.scss';
 
 function HeaderComponent(props) {
    return (
-    <div className="header">
-    <div className="logo">
+    <div className={classes.header}>
+    <div className={classes.logo}>
         <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo"/>
     </div>
-    <div className="links">
+    <div className={classes.links}>
         <span>{props.name}</span>
         <span>Notificaciones</span>
     </div>

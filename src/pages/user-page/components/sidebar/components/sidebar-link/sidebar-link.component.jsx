@@ -1,9 +1,9 @@
 import React from 'react';
-import './sidebar-link.component.scss';
+import classes from './sidebar-link.module.scss';
 
 function SidebarLinkComponent(props){
     return(
-        <span className="link">{props.name}</span>
+        <span className={classes.link}>{props.name}</span>
     )
 }
 

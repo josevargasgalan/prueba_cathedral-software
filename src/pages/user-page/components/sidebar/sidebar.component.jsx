@@ -1,16 +1,16 @@
 import React from 'react';
-import './sidebar.component.scss';
+import classes from './sidebar.module.scss';
 import SidebarLink from './components/sidebar-link/sidebar-link.component';
 
 function SidebarComponent(props) {
 const links = props.links.map((link, i) => <SidebarLink name={link} key={i}></SidebarLink>)
 
     return(
-        <div className="sidebar-wrapper">
-            <div className="logo">
+        <div className={classes['sidebar-wrapper']}>
+            <div className={classes.logo}>
                 <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo"/>
             </div>
-            <div className="links-wrapper">
+            <div className={classes['links-wrapper']}>
                 {links}
             </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../../../features/state/actions/index';
-import './header.component.scss';
+import classes from './header.module.scss';
 
 class HeaderComponent extends Component {
 
@@ -16,11 +16,11 @@ class HeaderComponent extends Component {
 
     render() {
         return (
-            <div className="header">
-                <div className="logo">
+            <div className={classes.header}>
+                <div className={classes.logo}>
                     <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo"/>
                 </div>
-                <div className="login-form">
+                <div className={classes['login-form']}>
                     <label>Correo electronico</label>
                     <input type="text" name="email" onChange={ this.handleChange }></input>
                     <label>Contraseña</label>
