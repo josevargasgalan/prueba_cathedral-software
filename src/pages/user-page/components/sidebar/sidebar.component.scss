@@ -1,0 +1,19 @@
+.sidebar-wrapper {
+    height: 100vh;
+    width: 20%;
+    background-color: #dfe3ee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width:170px;
+    flex-grow: 0;
+}

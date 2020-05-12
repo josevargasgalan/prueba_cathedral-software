@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../../../../features/state/actions/index';
 import './header.component.scss';
 
-class Header extends Component {
+class HeaderComponent extends Component {
 
     state = {
         email: '',
@@ -39,4 +39,4 @@ class Header extends Component {
     }
 }
   
-  export default connect(undefined, mapDispatchToProps)(Header);
+  export default connect(undefined, mapDispatchToProps)(HeaderComponent);

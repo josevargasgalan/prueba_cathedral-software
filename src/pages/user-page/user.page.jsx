@@ -1,8 +1,13 @@
 import React from 'react';
+import HeaderComponent from './components/header/header.component';
+import SidebarComponent from './components/sidebar/sidebar.component';
 
-function UserPage() {
+function UserPage(props) {
   return (
-    <h1>User</h1>
+    <React.Fragment>
+      <HeaderComponent name={props.name}></HeaderComponent>
+      <SidebarComponent links={['Inicio', 'Informacion', 'Fotos']}></SidebarComponent>
+    </React.Fragment>
   );
 }
 
