@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../../../features/state/actions/index';
 import classes from './header.module.scss';
 
-function HeaderComponent(props) {
-   return (
-    <div className={classes.header}>
-    <div className={classes.logo}>
-        <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo"/>
-    </div>
-    <div className={classes.links}>
-        <button onClick={() => props.logout()}>{props.name}</button>
-        <span>Notificaciones</span>
-        <span className={classes.notifications}>4</span>
-    </div>
-</div>
-   )
+class HeaderComponent extends Component {
+    state = { logout : false };
+    render() {
+        const logoutMenu = this.state.logout ? (<div onClick={() => this.props.logout()}>Cerrar Cesion</div>) : null;
+        return (
+            <div className={classes.header}>
+            <div className={classes.logo}>
+                <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo"/>
+            </div>
+            <div className={classes.links}>
+                <span className={classes.logout} onClick={() => this.setState({logout: true})}>{this.props.name}</span>
+                {logoutMenu}
+                <span>Notificaciones</span>
+                <span className={classes.notifications}>4</span>
+            </div>
+        </div>
+       )
+    }
 }
 
 
