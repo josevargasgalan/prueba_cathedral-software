@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from './actionTypes/user.actions.types';
+import { LOGIN, LOGOUT, LOGIN_ERROR } from './actionTypes/user.actions.types';
 import firebase from 'firebase';
 
 export const loginUser = (payload) => {
@@ -14,12 +14,18 @@ export const logoutUser = () => {
     }
 }
 
+export const loginError = () => {
+    return {
+        type: LOGIN_ERROR
+    }
+}
+
 export const login = (email, password) => {
     return (dispatch) => {
         firebase.auth().signInWithEmailAndPassword(email, password).then((res) => {
             dispatch(loginUser(firebase.auth().currentUser));
     }).catch(error => {
-        console.log(error)
+            dispatch(loginError())
     });
  }
 }
@@ -28,8 +34,6 @@ export const logout = () => {
     return (dispatch) => {
         firebase.auth().signOut().then((res) => {
             dispatch(logoutUser());
-    }).catch(error => {
-        console.log(error)
-    });
- }
+        })
+    }
 }

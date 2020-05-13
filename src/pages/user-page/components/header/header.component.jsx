@@ -6,7 +6,7 @@ import classes from './header.module.scss';
 class HeaderComponent extends Component {
     state = { logout : false };
     render() {
-        const logoutMenu = this.state.logout ? (<div onClick={() => this.props.logout()}>Cerrar Cesion</div>) : null;
+        const logoutMenu = this.state.logout ? (<div className={classes.logoutMenu} onClick={() => this.props.logout()}>Cerrar Sesion</div>) : null;
         return (
             <div className={classes.header}>
             <div className={classes.logo}>

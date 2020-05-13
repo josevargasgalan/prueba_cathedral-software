@@ -5,7 +5,8 @@ const initialState = {
    photoUrl: '',
    email: '',
    id: '',
-   isAuthenticated: false
+   isAuthenticated: false,
+   loginError: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -17,12 +18,18 @@ const reducer = (state = initialState, action) => {
                 photo: action.user.photoUrl,
                 email: action.user.email,
                 id: action.user.uid,
-                isAuthenticated: true
+                isAuthenticated: true,
+                loginError: false
             }
         case actions.LOGOUT:
             return {
                 ...state,
                 ...initialState
+            }
+        case actions.LOGIN_ERROR:
+            return {
+                ...state,
+                loginError: true
             }
             default: return state;
     }
