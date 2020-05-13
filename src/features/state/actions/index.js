@@ -1,1 +1,1 @@
-export { getUser } from './user.actions';
+export { login } from './user.actions';

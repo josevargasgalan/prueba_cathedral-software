@@ -1,17 +1,16 @@
-import { GET_USER } from './actionTypes/user.actions.types';
+import { LOGIN } from './actionTypes/user.actions.types';
 import firebase from 'firebase';
 
 export const sendUser = (payload) => {
     return {
-        type: GET_USER,
+        type: LOGIN,
         user: payload
     }
 }
 
-export const getUser = (email, password) => {
+export const login = (email, password) => {
     return (dispatch, getState) => {
         firebase.auth().signInWithEmailAndPassword(email, password).then((res) => {
-            console.log(firebase.auth().currentUser)
             dispatch(sendUser(firebase.auth().currentUser));
     }).catch(error => {
         console.log(error)

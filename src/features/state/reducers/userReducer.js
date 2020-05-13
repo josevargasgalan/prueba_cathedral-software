@@ -4,19 +4,20 @@ const initialState = {
    name: '',
    photoUrl: '',
    email: '',
-   id: ''
+   id: '',
+   isAuthenticated: false
 }
 
 const reducer = (state = initialState, action) => {
-    console.log(action);
     switch (action.type) {
-        case actions.GET_USER:
+        case actions.LOGIN:
             return {
                 ...state,
                 name: action.user.displayName,
                 photo: action.user.photoUrl,
                 email: action.user.email,
-                id: action.user.uid
+                id: action.user.uid,
+                isAuthenticated: true
             }
             default: return state;
     }

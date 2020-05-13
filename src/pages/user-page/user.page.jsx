@@ -1,19 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import HeaderComponent from './components/header/header.component';
 import SidebarComponent from './components/sidebar/sidebar.component';
 import ProfileComponent from './components/profile/profile.component';
 import classes from './user.module.scss';
+import { Redirect } from 'react-router-dom';
 
-function UserPage(props) {
-  return (
+class UserPage extends Component {
+  render() {
+    const userPage = this.props.isAuthenticated ? (
     <React.Fragment>
-      <HeaderComponent name={props.name}></HeaderComponent>
+      <HeaderComponent name={this.props.name}></HeaderComponent>
       <div className={classes['shell-wrapper']}>
         <SidebarComponent links={['Inicio', 'Informacion', 'Fotos']}></SidebarComponent>
         <ProfileComponent></ProfileComponent>
       </div>
-    </React.Fragment>
-  );
+    </React.Fragment>) 
+    : <Redirect to='/'></Redirect>
+    return userPage
+  }
 }
 
-export default UserPage;
+const mapStateToProps = state => {
+  return {
+      isAuthenticated: state.user.isAuthenticated
+  };
+}
+
+export default connect(mapStateToProps)(UserPage);
+

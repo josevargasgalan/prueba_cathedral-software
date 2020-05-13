@@ -14,6 +14,10 @@ class HeaderComponent extends Component {
         this.setState({...this.state, [event.target.name] : event.target.value})
     }
 
+    login = () => {
+        this.props.getUser(this.state.email, this.state.password);
+    } 
+
     render() {
         return (
             <div className={classes.header}>
@@ -25,7 +29,7 @@ class HeaderComponent extends Component {
                     <input type="text" name="email" onChange={ this.handleChange }></input>
                     <label>Contraseña</label>
                     <input type="password" name="password" onChange={ this.handleChange }></input> 
-                    <button onClick={ () => this.props.getUser(this.state.email, this.state.password) }>Entrar</button>
+                    <button onClick={ () => this.login() }>Entrar</button>
                 </div>
             </div>
         );
@@ -35,7 +39,7 @@ class HeaderComponent extends Component {
 
   const mapDispatchToProps = (dispatch) => {
     return {
-        getUser: (email, password) => dispatch(actionCreators.getUser(email, password))
+        getUser: (email, password) => dispatch(actionCreators.login(email, password))
     }
 }
   
