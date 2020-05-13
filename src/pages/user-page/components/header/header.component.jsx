@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../../../features/state/actions/index';
 import classes from './header.module.scss';
 
 function HeaderComponent(props) {
@@ -8,7 +10,7 @@ function HeaderComponent(props) {
         <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo"/>
     </div>
     <div className={classes.links}>
-        <span>{props.name}</span>
+        <button onClick={() => props.logout()}>{props.name}</button>
         <span>Notificaciones</span>
         <span className={classes.notifications}>4</span>
     </div>
@@ -16,4 +18,11 @@ function HeaderComponent(props) {
    )
 }
 
-export default HeaderComponent;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logout: () => dispatch(actionCreators.logout())
+    }
+}
+  
+  export default connect(undefined, mapDispatchToProps)(HeaderComponent);

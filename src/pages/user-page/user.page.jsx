@@ -10,7 +10,7 @@ class UserPage extends Component {
   render() {
     const userPage = this.props.isAuthenticated ? (
     <React.Fragment>
-      <HeaderComponent name={this.props.name}></HeaderComponent>
+      <HeaderComponent name='Jose'></HeaderComponent>
       <div className={classes['shell-wrapper']}>
         <SidebarComponent links={['Inicio', 'Informacion', 'Fotos']}></SidebarComponent>
         <ProfileComponent></ProfileComponent>
@@ -23,7 +23,8 @@ class UserPage extends Component {
 
 const mapStateToProps = state => {
   return {
-      isAuthenticated: state.user.isAuthenticated
+      isAuthenticated: state.user.isAuthenticated,
+      name: state.user.name
   };
 }
 
